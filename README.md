@@ -62,16 +62,86 @@ Luego, se ha realizado un analisis de intervalo de confianza 95% (IC 95%). Este 
 4  LPU83_1729  2.435778e+07     1.074940e+07     3.796615e+07
 ```
 
+A continuación se realizo un analsis de tamaño de muestra:
+#Este
+
+
+#
 Con el fin de determinar si luego podemos analizar los datos de manera paramétrica o no paramétricamente, se realizo un contraste de hipótesis. En esta seccion se analizo si la distribucion de los datos para cada caso siguen una distribución normal, y si sus varianzas son o no muy diferentes entre sí (homocedasticidad o heterocedasticidad, respectivamente). 
 
 Para el analsis de la normalidad se realizó el test de normalidad (normal test en python). En este caso se deben plantear las siguientes dos hipótesis:
-H0 = los datos se distribuyen normlamente
+```python
+H0 = los datos se distribuyen normlamente.
 H1 = los datos no se distribuyen normalmente.
+```
 Si el p-value del test es >0.05 entocnes H0 será aceptada y H1 rechazada. En caso que p-value < 0.05, H0 sera rechazada y H1 aceptada.
 
 Para el analsisi de varianza (homocedasticidad o heterocedasticidad) se aplicó el test de Levene. Para este también se plantean dos hipótesis:
-H0 = las varianzadas son similares
-H1 = las varianzan son significativamente diferentes
+```python
+H0 = las varianzadas son similares.
+H1 = las varianzan son significativamente diferentes.
+```
 Si el p-value del test es >0.05 entocnes H0 será aceptada y H1 rechazada. En caso que p-value < 0.05, H0 sera rechazada y H1 aceptada.
 
-Los resultados para tales test se resumen en la siguiente tabla:
+Los resultados para tales test se resumen a continuación:
+```python
+Test de Normalidad
+
+Tratamiento: LPU83_WT
+  Estadístico = 1.62
+  p-valor = 0.4439
+ Se acepta H0: Se asume distribución normal.
+
+Tratamiento: LPU83_0308
+  Estadístico = 3.98
+  p-valor = 0.1366
+ Se acepta H0: Se asume distribución normal.
+
+Tratamiento: LPU83_1066
+  Estadístico = 1.03
+  p-valor = 0.5979
+ Se acepta H0: Se asume distribución normal.
+
+Tratamiento: LPU83_1088
+  Estadístico = 12.30
+  p-valor = 0.0021
+ Se rechaza H0: No sigue distribución normal.
+
+Tratamiento: LPU83_1729
+  Estadístico = 7.73
+  p-valor = 0.0210
+ Se rechaza H0: No sigue distribución normal.
+```
+```python
+Test de Levene para homocedasticidad
+
+Estadístico = 15.99
+p-valor = 0.0000
+ Se rechaza H0: Hay evidencia de heterocedasticidad (varianzas diferentes).
+ ```
+Podemos ver que los datos en LPU83_1088 y LPU83_1729 no siguen una distribucion normal, y que no hay homocedasticidad en la varianza entres los tratamientos. Por ende para poder evaluar si hay diferencia significativa en el recuento de viables de las cepas mutantes respecto de la cepa salvaje (LPU83_WT), se debera hacer un analisis no-paramétrico. Dado que nuestro n < 30 y queremos comparar de a pares relizamos dos test independientes para ver si hay o no concordancia entre ellos. Los test a relizar son: Welch y Mann-Whitney.
+```python
+Comparación               Mann-Whitney U    p-valor MW    t de Welch    p-valor Welch
+LPU83_WT vs LPU83_0308        122.0        2.113414e-01   -2.719976       0.014412
+LPU83_WT vs LPU83_1066         0.0         3.222224e-07   -6.867712       0.000003
+LPU83_WT vs LPU83_1088        262.5        1.554740e-03    3.971797       0.000371
+LPU83_WT vs LPU83_1729        274.5        3.941362e-04    4.332794       0.000146
+```
+Podemos concluir a partir de estos analisis, que la unica cepa que no presenta diferencia significativa respecto la cepa salvaje es LPU83_0308. Mientras que el resto de las cepas si lo hacen.
+
+Por ultimo se hizo un analisis de relacion de variables:
+Dado que estamos fente a una situacion no paramétrica, con variables numericas, se utilizó el test de Spearman. Este test nos permitirá evaluar si existe o no una relacion entre dos variables. El resultado del mismo nos arrojará un coeficient rho (-1 < rho < 1) y un p-value. Un coeficiente -1 indica una correlación negativa perfecta, 0 indica ausencia de correlación, y 1 indica una correlación positiva perfecta. Y solo será significativo si el p-value < 0.05.
+
+ ```python
+variable_1 = "supervivencia bacteriana / mg de nodulo por planta"
+variable_2 = "mg total de nodulo por planta"
+
+  Cepa        Coeficiente rho (Spearman)   p-valor
+LPU83_WT               0.395661            0.104107
+LPU83_0308             0.203407            0.418201
+LPU83_1066             0.183884            0.465139
+LPU83_1088             0.106405            0.674321
+LPU83_1729             -0.377457           0.122535
+```
+
+A modo de conclusión de este trabajo.
