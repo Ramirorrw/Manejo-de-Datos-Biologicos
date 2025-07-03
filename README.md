@@ -16,9 +16,13 @@ Primero se graficó la distribucion de las frecuencias de las medidas para cada 
 Tales graficos se presentan en los archivos:
 
 !(Frecuencia_LPU83_WT.png)
+
 !(Frecuencia_LPU83_0308.png)
+
 !(Frecuencia_LPU83_1066.png)
+
 !(Frecuencia_LPU83_1088.png)
+
 !(Frecuencia_LPU83_1729.png)
 
 
