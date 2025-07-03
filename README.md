@@ -28,12 +28,14 @@ Tales graficos se presentan en los archivos:
 A partir de estas imagenes creo estar seguro de que los datos del grupo LPU83_WT tengan una distribución normal, y que los grupos LPU83_1088 y LPU83_1729 no tengan una distribución normal; mientras que los datos de los grupos LPU83_0308 y LPU83_1066 no estan claros. Independientemente de mi interpretación, más adelante en este trabajo se realizó un test para evaluar la normalidad de la distribuicion de los datos (se aplicó el test de Pearson).
 
 Seguido a esto, se procedió con el cálculo de ciertos parámetros como la media, mediana, moda, RI (percentil 25 - 75%), Desviación Típica y Varianza. Los resultados obtenidos se pueden observar en la siguiente tabla:
+```python
  Tratamiento         Media      Mediana                  Moda            RI  Desviación típica      Varianza
 0    LPU83_WT  5.867778e+07   57900000.0   [75200000.00000022]  2.422500e+07       1.950652e+07  3.805042e+14
 1  LPU83_0308  2.006556e+08   93600000.0   [28700000.00000004]  2.550250e+08       2.205973e+08  4.866319e+16
 2  LPU83_1066  4.346667e+08  416000000.0  [115000000.00000027]  3.357500e+08       2.314527e+08  5.357035e+16
 3  LPU83_1088  2.957889e+07   19900000.0  [3980000.0000000033]  4.659500e+07       2.420043e+07  5.856606e+14
 4  LPU83_1729  2.435778e+07   11220000.0  [1350000.0000000026]  3.102000e+07       2.736516e+07  7.488520e+14
+```
 
 A continuación se hizo un análsisi de asimetría y un análisis de Curtósis. El analsisi de asimetría nos permitirá determianr si la frecuencia de los datos al rededor de la media estan distribuidos de manera equidistante de un lado y otro, o de manera asimétrica. Para ello se utiliza el coeficiente de fisher. Valores negativos indica que la variable toma más valores hacia la izquierda de la media (asimetría negativa), un valor 0 indica simetría perfecta y valores positivos indica que la variable toma con mayor frecuencia valores a la derecha de la media (asimetría positiva). Por otro lado el coeficiente de Curtosis nos indica como esos datos estan agrupados al rededor de la media. Valores negativos indican un agrupamiento tipo platicúrtica (una forma mas aplanada), valor 0 indica un tipo mesocúrtica (correspondiente a una perfecta campana de Gaus), y valores positivo indican un agrupamiento tipo leptocúrtica (una forma mas puntiaguda alrededor de la media). El resultado de ambos test lo vemos en la siguiente tabla:
 
