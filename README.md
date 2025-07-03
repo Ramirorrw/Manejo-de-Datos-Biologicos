@@ -16,7 +16,7 @@ Se trabajo sobre la hoja1 para los analisis en este trabajo.
 Primero se graficó la distribucion de las frecuencias de las medidas para cada grupo (LPU83_WT, LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729).
 Tales graficos se presentan en los archivos:
 
-!(Frecuencia_LPU83_WT.png)
+!Frecuencia_LPU83_WT.png
 
 !(Frecuencia_LPU83_0308.png)
 
@@ -25,7 +25,7 @@ Tales graficos se presentan en los archivos:
 !(Frecuencia_LPU83_1088.png)
 
 !(Frecuencia_LPU83_1729.png)
-
+#######
 A partir de estas imagenes creo estar seguro de que los datos del grupo LPU83_WT tengan una distribución normal, y que los grupos LPU83_1088 y LPU83_1729 no tengan una distribución normal; mientras que los datos de los grupos LPU83_0308 y LPU83_1066 no estan claros. Independientemente de mi interpretación, más adelante en este trabajo se realizó un test para evaluar la normalidad de la distribuicion de los datos (se aplicó el test de Pearson).
 
 Seguido a esto, se procedió con el cálculo de ciertos parámetros como la media, mediana, moda, RI (percentil 25 - 75%), Desviación Típica y Varianza. Los resultados obtenidos se pueden observar en la siguiente tabla:
@@ -37,7 +37,7 @@ Seguido a esto, se procedió con el cálculo de ciertos parámetros como la medi
 3  LPU83_1088  2.957889e+07   19900000.0  [3980000.0000000033]  4.659500e+07       2.420043e+07  5.856606e+14
 4  LPU83_1729  2.435778e+07   11220000.0  [1350000.0000000026]  3.102000e+07       2.736516e+07  7.488520e+14
 ```
-
+######
 A continuación se hizo un análsisi de asimetría y un análisis de Curtósis. El analsisi de asimetría nos permitirá determianr si la frecuencia de los datos al rededor de la media estan distribuidos de manera equidistante de un lado y otro, o de manera asimétrica. Para ello se utiliza el coeficiente de fisher. Valores negativos indica que la variable toma más valores hacia la izquierda de la media (asimetría negativa), un valor 0 indica simetría perfecta y valores positivos indica que la variable toma con mayor frecuencia valores a la derecha de la media (asimetría positiva). Por otro lado el coeficiente de Curtosis nos indica como esos datos estan agrupados al rededor de la media. Valores negativos indican un agrupamiento tipo platicúrtica (una forma mas aplanada), valor 0 indica un tipo mesocúrtica (correspondiente a una perfecta campana de Gaus), y valores positivo indican un agrupamiento tipo leptocúrtica (una forma mas puntiaguda alrededor de la media). El resultado de ambos test lo vemos en la siguiente tabla:
 
 ```python
@@ -50,7 +50,7 @@ Tratamiento   Asimetría Fisher    Curtosis
 ```
 
 Vemos que LPU83_0308 y LPU83_1729 presentan una clara asimetría positiva, mientras que LPU83_1066 y LPU83_1088 presentan una leve asimetría positiva. En el caso de LPU83_WT presenta una asimetría leve hacia la izquierda (negativa). El test de curtosis muestra una forma clarametne leptocúrtica para la distribucion de datos en LPU83_1729, una forma claramente platicúrtica para LPU83_1088. En los casos de LPU83_0308 y LPU83_1066, presentan una leve forma platicúrtica, mientras que LPU83_WT presenta una forma levemente leptocúrtica.
-
+######
 Luego, se ha realizado un analisis de intervalo de confianza 95% (IC 95%). Este analsisi nos permite decir con un 95% de confianza que la media debe encotrarse comprendida dentro de tal rango de valores. Este analisis brindó lo siguientes resultados:
 
 ```python
@@ -61,12 +61,14 @@ Luego, se ha realizado un analisis de intervalo de confianza 95% (IC 95%). Este 
 3  LPU83_1088  2.957889e+07     1.754430e+07     4.161348e+07
 4  LPU83_1729  2.435778e+07     1.074940e+07     3.796615e+07
 ```
-
+######
 A continuación se realizo un analsis de tamaño de muestra:
-#Este
-
-
-#
+Este ensayo nos permite determinar la cantidad de muestras mínimas que debemos analizar para que nuestros análisis, con las distribuciones y valores de media, varianza, etc, tengan validez. Para este item del trabajo, solo calculé el tamaño de mmuestra miníma necesaria para la comparación LPU83_WT vs LPU83_1066 dado que intuí una posible diferencia significativa. Igualmente el analisis de diferencia signifivativa, lo realicé más adelante luego de analizar otros parámetros necesarios.
+```python
+LPU83_WT vs LPU83_1066:
+Tamaño de muestra recomendado: 5.0 muestras por grupo.
+```
+######
 Con el fin de determinar si luego podemos analizar los datos de manera paramétrica o no paramétricamente, se realizo un contraste de hipótesis. En esta seccion se analizo si la distribucion de los datos para cada caso siguen una distribución normal, y si sus varianzas son o no muy diferentes entre sí (homocedasticidad o heterocedasticidad, respectivamente). 
 
 Para el analsis de la normalidad se realizó el test de normalidad (normal test en python). En este caso se deben plantear las siguientes dos hipótesis:
@@ -129,7 +131,8 @@ LPU83_WT vs LPU83_1729        274.5        3.941362e-04    4.332794       0.0001
 ```
 Podemos concluir a partir de estos analisis, que la unica cepa que no presenta diferencia significativa respecto la cepa salvaje es LPU83_0308. Mientras que el resto de las cepas si lo hacen.
 
-Por ultimo se hizo un analisis de relacion de variables:
+#####
+Por ultimo se hizo un analisis de correlacion de variables:
 Dado que estamos fente a una situacion no paramétrica, con variables numericas, se utilizó el test de Spearman. Este test nos permitirá evaluar si existe o no una relacion entre dos variables. El resultado del mismo nos arrojará un coeficient rho (-1 < rho < 1) y un p-value. Un coeficiente -1 indica una correlación negativa perfecta, 0 indica ausencia de correlación, y 1 indica una correlación positiva perfecta. Y solo será significativo si el p-value < 0.05.
 
  ```python
@@ -143,5 +146,6 @@ LPU83_1066             0.183884            0.465139
 LPU83_1088             0.106405            0.674321
 LPU83_1729             -0.377457           0.122535
 ```
-
-A modo de conclusión de este trabajo.
+Como resultado no hay una correlacion entre las variables.
+#####
+A modo de conclusión de este trabajo, podemos decir que el mutante LPU83_1066 exibhe un mayor recuento de viables desde nódulo cuando las plantas son inoculadas con la misma cantidad de bacteria y crecidas en las mismas condiciones. Esto no es un resultado que esperabamos ver, dado que el proceso de simbiosis implica, entre otros estreses, un estrés ácido para la bacteria. Con lo cual si nosotros estamos mutando un gen, que por trasncriptómica y proteómica vimos que esta sobre-expresado en acidez, era de esperar un empeoramiento o no-change en la viabilidad de las baceterias dentro del nódulo. Sin embargo, esto es un resultado interesante para seguir ondando y profundizando en su estudio mediante otros ensayos y sus posteriores análisis estadísticos. Por otro lado, respecto al mutante LPU83_0308 podemos decir que no hay diferencias significativas en la viabilidad respecto la cepa salvaje. Y en cuente a los mutantes LPU83_1088 y LPU83_1729, a priori habría una diferencia estadísitica, semejante al caso del mutante LPU83_1066. Pero quedaría realizar el analisis de tamaño de muestra para poder aseguranos que estamos analizando la cantidad mínima de muestras para observar dica diferencia.
