@@ -19,15 +19,12 @@ variable = Supervivencia_(ufc_mg_nodulos)
 Primero se graficó la distribucion de las frecuencias de las medidas para cada grupo (LPU83_WT, LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729).
 Tales graficos se presentan en los archivos:
 
-!./Frecuencia_LPU83_WT.png
+![Frecuencia_LPU83_WT](https://github.com/user-attachments/assets/1f54d88b-61a4-4d29-b035-39c61bb1444d)
+![Frecuencia_LPU83_0308](https://github.com/user-attachments/assets/04f2deec-946c-40e2-8c03-bd0e68270d0c)
+![Frecuencia_LPU83_1066](https://github.com/user-attachments/assets/01c14fac-2133-45ec-a092-8f915b352d8f)
+![Frecuencia_LPU83_1088](https://github.com/user-attachments/assets/3e9c4a55-f451-4cf3-a984-b9c0c309510a)
+![Frecuencia_LPU83_1729](https://github.com/user-attachments/assets/7b926ab0-d37b-48fd-87a9-9118a69b58a3)
 
-!(Frecuencia_LPU83_0308.png)
-
-!(Frecuencia_LPU83_1066.png)
-
-!(Frecuencia_LPU83_1088.png)
-
-!(Frecuencia_LPU83_1729.png)
 
 ####
 A partir de estas imagenes creo estar seguro de que los datos del grupo LPU83_WT tengan una distribución normal, y que los grupos LPU83_1088 y LPU83_1729 no tengan una distribución normal; mientras que los datos de los grupos LPU83_0308 y LPU83_1066 no estan claros. Independientemente de mi interpretación, más adelante en este trabajo se realizó un test para evaluar la normalidad de la distribuicion de los datos (se aplicó el test de Pearson).
