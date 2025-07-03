@@ -7,6 +7,7 @@ Descripción del ensayo:
 Para este ensayo, 18 plantas fueron inoculadas con una misma cantidad de bacterias vivas, y crecidas en las mismas condiciones. Las cepas utilizadas fueron LPU83_WT, que funcionó como control positivo, y los cuatro mutantes generados LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729, como cepas a evaluar. Pasados los 45 días post inoculación, se cortaron y pesaron el total de nódulos por planta. Dichos nodulos fueron esterilizados superficialmente, y triturados en solución fisiológica para extraer todas las bacterias internas. Luego dichas extraciones fueron diluidas en forma seriada, y de cada dilucion se colocaron 10 gotas de 10ults en placa con medio de cultivo para hacer los recuentos de viables.
 
 De esta manera entonces se obtiene una tabla con dos entradas:
+
 hoja1 = Supervivencia_(ufc_mg_nodulos)
 hoja2 = peso_nódulos_mg_planta
 
