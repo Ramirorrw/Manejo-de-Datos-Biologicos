@@ -16,7 +16,7 @@ Se trabajo sobre la hoja1 para los analisis en este trabajo.
 Primero se graficó la distribucion de las frecuencias de las medidas para cada grupo (LPU83_WT, LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729).
 Tales graficos se presentan en los archivos:
 
-!Frecuencia_LPU83_WT.png
+!./Frecuencia_LPU83_WT.png
 
 !(Frecuencia_LPU83_0308.png)
 
