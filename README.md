@@ -1,15 +1,18 @@
 # Manejo-de-Datos-Biologicos
-
+#
 Marco teórico:
-#
+
+
 Para este trabajo final de la materia “Manejo de datos en biología computacional. Herramientas de estadística” he propuesto estudiar el sistema biológico el cual me encuentro estudiando en el marco de mi doctorado. Este sistema es la bacteria Rizhobium favelukesii LPU83. R. favelkesii es una alfa proteo-bacteria capaz de llevar a cabo un proceso de simbiosis con su par simbionte Alfalfa (donde se produce un nuevo órgano denominado nódulo) y capaz de sobrevivir a pH ácidos moderados (pH 4.6). Estas características lo hacen un interesante objeto de estudio de los mecanismos de tolerancia a la acidez. Dado esto, es que en nuestro laboratorio se hicieron estudios transcriptómicos (RNA-seq) y proteómicos de R. favelukesii en condiciones de acidez. A partir de estos ensayos se filtraron aquellos genes diferencialmente expresados en condiciones de pH ácido (pH4.6) respecto de pH neutro (pH7) y se seleccionaron los siguientes genes: LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729. Dichos genes fueron interrumpidos por simple inserción de vector, generando así cepas mutantes donde el correcto plegamiento de los productos de dichos genes se ve afectado y, por ende, también su funcionalidad. Estos mutantes fueron sometidos a diferentes ensayos. Entre ellos, el que se presentará en este trabajo: estudiar recuento de viables obtenidos a partir de nodulos. Este ensayo nos permitirá poder profundizar sobre el estudio de estos genes y su importancia, en este caso, para la proliferación o no, de las bacterias dentro de los nódulos.
-
+#
 Descripción del ensayo:
-#
-Para este ensayo, 18 plantas fueron inoculadas con una misma cantidad de bacterias vivas, y crecidas en las mismas condiciones. Las cepas utilizadas fueron LPU83_WT, que funcionó como control positivo, y los cuatro mutantes generados LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729, como cepas a evaluar. Pasados los 45 días post inoculación, se cortaron y pesaron el total de nódulos por planta. Dichos nodulos fueron esterilizados superficialmente, y triturados en solución fisiológica para extraer todas las bacterias internas. Luego dichas extraciones fueron diluidas en forma seriada, y de cada dilucion se colocaron 10 gotas de 10ults en placa con medio de cultivo para hacer los recuentos de viables.
 
-De esta manera entonces se obtiene una tabla:
+
+Para este ensayo, 18 plantas fueron inoculadas con una misma cantidad de bacterias vivas, y crecidas en las mismas condiciones. Las cepas utilizadas fueron LPU83_WT, que funcionó como control positivo, y los cuatro mutantes generados LPU83_0308, LPU83_1066, LPU83_1088 y LPU83_1729, como cepas a evaluar. Pasados los 45 días post inoculación, se cortaron y pesaron el total de nódulos por planta. Dichos nodulos fueron esterilizados superficialmente, y triturados en solución fisiológica para extraer todas las bacterias internas. Luego dichas extraciones fueron diluidas en forma seriada, y de cada dilucion se colocaron 10 gotas de 10ults en placa con medio de cultivo para hacer los recuentos de viables.
 #
+De esta manera entonces se obtiene una tabla:
+
+
 variable = Supervivencia_(ufc_mg_nodulos)
 
 
@@ -64,7 +67,8 @@ Luego, se ha realizado un analisis de intervalo de confianza 95% (IC 95%). Este 
 ```
 ######
 A continuación se realizo un analsis de tamaño de muestra:
-#
+
+
 Este ensayo nos permite determinar la cantidad de muestras mínimas que debemos analizar para que nuestros análisis, con las distribuciones y valores de media, varianza, etc, tengan validez. Para este item del trabajo, solo calculé el tamaño de mmuestra miníma necesaria para la comparación LPU83_WT vs LPU83_1066 dado que intuí una posible diferencia significativa. Igualmente el analisis de diferencia signifivativa, lo realicé más adelante luego de analizar otros parámetros necesarios.
 ```python
 LPU83_WT vs LPU83_1066:
@@ -135,7 +139,8 @@ Podemos concluir a partir de estos analisis, que la unica cepa que no presenta d
 
 #####
 Por ultimo se hizo un analisis de correlacion de variables:
-#
+
+
 Dado que estamos fente a una situacion no paramétrica, con variables numericas, se utilizó el test de Spearman. Este test nos permitirá evaluar si existe o no una relacion entre dos variables. El resultado del mismo nos arrojará un coeficient rho (-1 < rho < 1) y un p-value. Un coeficiente -1 indica una correlación negativa perfecta, 0 indica ausencia de correlación, y 1 indica una correlación positiva perfecta. Y solo será significativo si el p-value < 0.05.
 
  ```python
